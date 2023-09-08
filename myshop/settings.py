@@ -114,8 +114,6 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-# Default primary key field type
-# https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
@@ -127,18 +125,13 @@ MEDIA_ROOT = BASE_DIR / 'media'
 CART_SESSION_ID = 'cart'
 
 
-# EMAIL_HOST = 'smtp.gmail.com'
-# EMAIL_HOST_USER = "ivankuzjagin@gmail.com"
-# EMAIL_HOST_PASSWORD = "qpcamtchihrvtwmr"
-# EMAIL_PORT = 587
-# EMAIL_USE_TLS = True
-# EMAIL_USE_SSL = False
+
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 
 STATIC_ROOT = BASE_DIR / 'static'
 
-# BROKER_URL = 'amqp://guest:guest@localhost:5672/'
+
 
 
 CELERY_BROKER_URL = 'amqp://guest:guest@localhost:5672//'
