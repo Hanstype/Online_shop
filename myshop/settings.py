@@ -1,6 +1,5 @@
-
 from pathlib import Path
-
+from secret_settings import *
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -9,7 +8,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-cvlmuqrzy3&u3f+b_cys=95i=kjbn7k1fru4tb2k=d^s35&7xz'
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -28,8 +27,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'shop.apps.ShopConfig',
     'cart.apps.CartConfig', 
-    'orders.apps.OrdersConfig'
+    'orders.apps.OrdersConfig',
+    'payment.apps.PaymentConfig',
 ]
+
+# INSTALLED_APPS += ('kombu.transport.django', )
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -121,3 +125,20 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 
 CART_SESSION_ID = 'cart'
+
+
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_HOST_USER = "ivankuzjagin@gmail.com"
+# EMAIL_HOST_PASSWORD = "qpcamtchihrvtwmr"
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+# EMAIL_USE_SSL = False
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+
+STATIC_ROOT = BASE_DIR / 'static'
+
+# BROKER_URL = 'amqp://guest:guest@localhost:5672/'
+
+
+CELERY_BROKER_URL = 'amqp://guest:guest@localhost:5672//'
