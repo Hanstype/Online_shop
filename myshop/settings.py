@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'cart.apps.CartConfig', 
     'orders.apps.OrdersConfig',
     'payment.apps.PaymentConfig',
+    'coupons.apps.CouponsConfig',
 ]
 
 # INSTALLED_APPS += ('kombu.transport.django', )
@@ -134,4 +135,4 @@ STATIC_ROOT = BASE_DIR / 'static'
 
 
 
-CELERY_BROKER_URL = 'amqp://guest:guest@localhost:5672//'
+# CELERY_BROKER_URL = 'amqp://guest:guest@localhost:5672//'
