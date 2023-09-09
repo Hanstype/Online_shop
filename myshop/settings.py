@@ -133,6 +133,10 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 STATIC_ROOT = BASE_DIR / 'static'
 
 
+REDIS_HOST = 'localhost'
+REDIS_PORT = 6379
+REDIS_DB = 1 
+
 
 
 # CELERY_BROKER_URL = 'amqp://guest:guest@localhost:5672//'
